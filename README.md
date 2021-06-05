@@ -10,8 +10,14 @@ Below are the projects I worked on in this program:
 
 ## Project 2 - 2D Feature Tracking
 
+<img src="Project_2_2D_Feature_Tracking/images/keypoints.png" width="600">
+
 ## Project 3 - 3D Object Tracking
 
+<img src="Project_3_3D_Object_Tracking/images/course_code_structure.png" width="600">
+
 ## Project 4 - Radar
+
+<img src="Project_4_Radar_Target_Generation_And_Detection/figures/radar_project_overview.png" width="600">
 
 ## Project 5 - Unscented Kalman Filter
