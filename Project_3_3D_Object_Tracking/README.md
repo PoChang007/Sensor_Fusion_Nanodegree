@@ -19,9 +19,9 @@ In this final project, you will implement the missing parts in the schematic. To
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
 * Git LFS
   * Weight files are handled using [LFS](https://git-lfs.github.com/)
-* OpenCV >= 4.1
+* OpenCV >= 4.5
   * This must be compiled from source using the `-D OPENCV_ENABLE_NONFREE=ON` cmake flag for testing the SIFT and SURF detectors.
-  * The OpenCV 4.1.0 source code can be found [here](https://github.com/opencv/opencv/tree/4.1.0)
+  * The OpenCV 4.5.0 source code can be found [here](https://github.com/opencv/opencv/tree/4.5.0)
 * gcc/g++ >= 5.4
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
