@@ -21,3 +21,5 @@ Below are the projects I worked on in this program:
 <img src="Project_4_Radar_Target_Generation_And_Detection/figures/radar_project_overview.png" width="600">
 
 ## Project 5 - Unscented Kalman Filter
+
+<img src="Project_5_Unscented_Kalman_Filter/media/ukf_highway_tracked.gif" width="600">
