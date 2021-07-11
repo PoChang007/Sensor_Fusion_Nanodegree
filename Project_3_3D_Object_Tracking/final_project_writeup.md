@@ -1,4 +1,4 @@
-# Midterm Project WriteUp
+# Final Project WriteUp
 
 ## FP.1 Match 3D Objects
 
@@ -26,8 +26,7 @@ Approach: First we iteratively go through each keypoint match and check whether 
 
 ## FP.4 Compute Camera-based TTC
 
-Compute the time-to-collision in second for all matched 3D objects using only keypoint correspondences from the matched bounding boxes between current 
-and previous frame.
+Compute the time-to-collision in second for all matched 3D objects using only keypoint correspondences from the matched bounding boxes between current and previous frame.
 
 Implementation is in `computeTTCCamera` function (`camFusion_Student.cpp`)
 
