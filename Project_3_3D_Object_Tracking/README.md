@@ -9,6 +9,8 @@ In this project, we will implement the missing parts in the schematic based on w
 3. we will then proceed to do the same using the camera, which requires to first associate keypoint matches to regions of interest and then to compute the TTC based on those matches. 
 4. And lastly, we will conduct various tests with the framework. Our goal is to identify the most suitable detector/descriptor combination for TTC estimation and also to search for problems that can lead to faulty measurements by the camera or Lidar sensor.
 
+[Project Writeup](final_project_writeup.md#Final-Project-WriteUp)
+
 ## Dependencies for Running Locally
 
 * cmake >= 2.8

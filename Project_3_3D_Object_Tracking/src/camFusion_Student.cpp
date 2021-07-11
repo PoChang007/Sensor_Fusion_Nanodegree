@@ -399,7 +399,7 @@ void matchBoundingBoxes(std::vector<cv::DMatch> &matches, std::map<int, int> &bb
 
         auto it_search_prev_box = std::find(prevBoxCandidate.begin(), prevBoxCandidate.end(), prevBoundIndex[max_keypoints_index]);
         auto it_search_curr_box = std::find(currBoxCandidate.begin(), currBoxCandidate.end(), currBoundIndex[max_keypoints_index]);
-        // auto it_search_prev_box = std::find_if(boxCandidate.begin(), boxCandidate.end(), [&test](std::pair<int, int> const& elem) { return elem.first == test;});       
+           
         auto isSameClass = prevFrame.boundingBoxes[prevBoundIndex[max_keypoints_index]].classID == currFrame.boundingBoxes[currBoundIndex[max_keypoints_index]].classID;
         if (it_search_prev_box == prevBoxCandidate.end() && it_search_curr_box == currBoxCandidate.end() && isSameClass)
         {
