@@ -33,7 +33,7 @@ In this project, we will implement the missing parts in the schematic based on w
 
 1. Clone this repo: `git clone https://github.com/PoChang007/Sensor_Fusion_Nanodegree.git`
 2. `cd Sensor_Fusion_Nanodegree/Project_3_3D_Object_Tracking`
-3. Make a build directory in the project's root directory: `mkdir build && cd build`
+3. `mkdir build && cd build`
 4. Compile: `cmake -DOPENCV_EXTRA_MODULES_PATH=/path_to_opencv_contrib/opencv_contrib/modules / -D WITH_VTK=OFF / -D BUILD_opencv_viz=OFF ..`
 4. `make -j4`
 4. Run it: `./3D_object_tracking`.

@@ -3,6 +3,11 @@
 <img src="figures/radar_project_overview.png" width="600">
 <hr>
 
+## Usage
+
+1. Install [Matlab](https://www.mathworks.com/products/matlab.html)
+2. Open `radar_target_generation_and_detection.m` and run it
+
 ## Project Writeup
 
 ### FMCW Waveform Design
@@ -35,9 +40,9 @@ Then we sum up the single (convert from decibels to power) in training cells and
 and we convert it back to decibels and add the Offset value to it to determine the threshold.
 
 Now we compare the signal under CUT with the threshold value. If the signal under CUT is greater than
-the threshold, we assign value 1 to it, otherwise we assign value 0 to it.  
-Since CUTs cannot be located at the edges of the matrix, we need to assign value 0 to them.
-We simply create a double for loop and check if CUTs position is at the edge.  
+the threshold, we assign value 1 to it, otherwise we assign value 0 to it. Since CUTs cannot be located at the edges of the matrix, we need to assign value 0 to them. We simply create a double for loop and check if CUTs position is at the edge.  
 Finally, we use surf function to plot the output of 2D CFAR.
 
-<img src="figures/target_signal_extract.png" width="400">
+| Range Doppler Map              | Extracted Valid Target                   |
+|:------------------------------:|:----------------------------------------:|
+|<img src="figures/range_doppler_map.jpg" width="400" height="300"> |<img src="figures/target_signal_extract.png" width="400" height="300"> |

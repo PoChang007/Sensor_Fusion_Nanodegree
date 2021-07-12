@@ -33,8 +33,9 @@ The red spheres above cars represent the (x,y) lidar detection and the purple li
 
 1. Clone this repo: `git clone https://github.com/PoChang007/Sensor_Fusion_Nanodegree.git`
 2. `cd Sensor_Fusion_Nanodegree/Project_5_Unscented_Kalman_Filter`
-3. Compile: `cmake .. && make`
-4. Run it: `./ukf_highway`
+3. `mkdir build && cd build`
+4. Compile: `cmake .. && make`
+5. Run it: `./ukf_highway`
 
 ## Simulation Result (Accuracy Verification)
 

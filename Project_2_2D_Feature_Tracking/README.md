@@ -32,7 +32,7 @@ The idea of this camera project is to build a collision detection system - that'
 
 1. Clone this repo: `git clone https://github.com/PoChang007/Sensor_Fusion_Nanodegree.git`
 2. `cd Sensor_Fusion_Nanodegree/Project_2_2D_Feature_Tracking`
-3. Make a build directory in the project's root directory: `mkdir build && cd build`
+3. `mkdir build && cd build`
 4. Compile: `cmake -DOPENCV_EXTRA_MODULES_PATH=/path_to_opencv_contrib/opencv_contrib/modules / -D WITH_VTK=OFF / -D BUILD_opencv_viz=OFF ..`
 4. `make -j4`
 5. Run it: `./2D_feature_tracking`.
