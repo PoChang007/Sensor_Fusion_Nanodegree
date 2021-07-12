@@ -1,6 +1,6 @@
 # Udacity - Sensor Fusion Nanodegree Program
 
-I took this program in 2021. The goal of this program is to get you familiarized with combining sensor data of:
+I finished this program in mid-2021. The goal of this program is to get you familiarized with combining sensor data of:
 
 * `Lidar/Radar` for recognizing surrounding vehicles and predict their positions and speeds
 * `Lidar/Camera` for recognizing preceding vehicles and estimating time-to-collision
