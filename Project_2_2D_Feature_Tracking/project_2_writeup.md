@@ -1,4 +1,4 @@
-# Midterm Project WriteUp
+# Project 2 WriteUp
 
 ## MP.1 Data Buffer Optimization
 
