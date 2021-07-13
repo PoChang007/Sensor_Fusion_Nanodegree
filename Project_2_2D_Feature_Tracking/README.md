@@ -10,7 +10,7 @@ The idea of this camera project is to build a collision detection system - that'
 * In the next part, we will then focus on descriptor extraction and matching using brute force and also the FLANN approach we discussed in the previous lesson. 
 * In the last part, once the code framework is complete, we will test the various algorithms in different combinations and compare them with regard to some performance measures. 
 
-[Project Writeup](mid_project_writeup.md#Midterm-Project-WriteUp)
+[Project Writeup](project_2_writeup.md#Project-2-WriteUp)
 
 ## Dependencies for Running Locally
 
