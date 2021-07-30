@@ -26,7 +26,7 @@ The red spheres above cars represent the (x,y) lidar detection and the purple li
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
-* PCL 1.2
+* PCL >= 1.2
   * Download PCL [here](https://pointclouds.org/downloads/)
 
 ## Basic Build Instructions

@@ -1,8 +1,8 @@
 # Udacity - Sensor Fusion Nanodegree Program
 
-I finished this program in mid-2021. The goal of this program is to get you familiarized with combining sensor data of:
+This repository is the summary of my learnings in Udacity's SFND program. The program mainly focuses on combining sensor data of:
 
-* `Lidar/Radar` for recognizing surrounding vehicles and predict their positions and speeds
+* `Lidar/Radar` for recognizing surrounding vehicles and predicting their positions and speeds
 * `Lidar/Camera` for recognizing preceding vehicles and estimating time-to-collision
 
 ## Installation
@@ -11,8 +11,6 @@ I finished this program in mid-2021. The goal of this program is to get you fami
 2. Install Git [LFS](https://git-lfs.github.com/)
 
 Each project can be built individually in its folder. See the instruction in each project folder.
-
-Below are the projects I worked on:
 
 ## Project 1 - Lidar Obstacle Detection
 
@@ -23,7 +21,7 @@ In this project, we use Lidar Point Cloud to detect the obstacle on the road. Th
 
 ## Project 2 - 2D Feature Tracking
 
-In this project, we use the camera to extract the features of preceding vehicles by applying well-known feature tracking algorithms. The keypoints will be first detected. Then, the descriptors for each keypoint can be extracted. The matching algorithms are used to match the corresponding keypoins detected in the incoming frame. The purpose of obtaining feature points from preceding vehicles is for time-to-collision (TTC) estimation in the third project. The evaluation on keypoint searching accuracy and processing speed for each algorithm is also conducted.
+In this project, we use the camera to extract the features of preceding vehicles by applying well-known feature tracking algorithms. The keypoints will be first detected. Then, the descriptors for each keypoint can be extracted. The matching algorithms are used to match the corresponding keypoints detected in the incoming frame. The purpose of obtaining feature points from preceding vehicles is for time-to-collision (TTC) estimation in the third project. The evaluation on keypoint searching accuracy and processing speed for each algorithm is also conducted.
 
 <img src="Project_2_2D_Feature_Tracking/images/keypoints.png" width="600">
 <hr>
