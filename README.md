@@ -1,6 +1,6 @@
 # Udacity - Sensor Fusion Nanodegree Program
 
-This repository is the summary of my learnings in Udacity's SFND program. The program mainly focuses on combining sensor data of:
+The summary of my learnings in Udacity's SFND program. The program mainly focuses on combining sensor data of:
 
 * `Lidar/Radar` for recognizing surrounding vehicles and predicting their positions and speeds
 * `Lidar/Camera` for recognizing preceding vehicles and estimating time-to-collision
@@ -16,7 +16,7 @@ Each project can be built individually in its folder. See the instruction in eac
 
 In this project, we use Lidar Point Cloud to detect the obstacle on the road. The RANSAC algorithm is used to segment out the ground and the scene from the 3D data. The KD-tree algorithm is applied to cluster point clouds such that obstacles in the scene can be identified. To speed up the obstacle detection processing, we do point cloud filtering by downsampling lidar data and cropping out the region of interest within the defined distance from the ego car.
 
-<img src="Project_1_Lidar_Obstacle_Detection/media/ObstacleDetectionFPS.gif" width="600">
+<img src="Project_1_Lidar_Obstacle_Detection/media/ObstacleDetection.gif" width="600">
 <hr>
 
 ## Project 2 - 2D Feature Tracking
