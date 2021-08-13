@@ -175,9 +175,9 @@ int main(int argc, const char *argv[])
             /* MATCH KEYPOINT DESCRIPTORS */
 
             vector<cv::DMatch> matches;
-            string matcherType = "MAT_FLANN";        // MAT_BF, MAT_FLANN
+            string matcherType = "MAT_FLANN";     // MAT_BF, MAT_FLANN
             string descriptorType = "DES_BINARY"; // DES_BINARY, DES_HOG
-            string selectorType = "SEL_KNN";       // SEL_NN, SEL_KNN
+            string selectorType = "SEL_KNN";      // SEL_NN, SEL_KNN
 
             //// STUDENT ASSIGNMENT
             //// TASK MP.5 -> add FLANN matching in file matching2D.cpp
@@ -185,7 +185,7 @@ int main(int argc, const char *argv[])
 
             matchDescriptors((dataBuffer.end() - 2)->keypoints, (dataBuffer.end() - 1)->keypoints,
                              (dataBuffer.end() - 2)->descriptors, (dataBuffer.end() - 1)->descriptors,
-                              matches, descriptorType, matcherType, selectorType);
+                             matches, descriptorType, matcherType, selectorType);
 
             //// EOF STUDENT ASSIGNMENT
 
@@ -218,8 +218,8 @@ int main(int argc, const char *argv[])
     } // eof loop over all images
     std::cout << "Average neighborhood size is " << neighborhoodAvegSum / (float)(imgEndIndex - imgStartIndex + 1) << "\n";
     std::cout << "Sum of match pairs for " << (imgEndIndex - imgStartIndex + 1) << " images is " << matchPairSum << "\n";
-    std::cout << "Average keypoints detect time for " << (imgEndIndex - imgStartIndex + 1) << " images is " << detectTimeSum/(double)(imgEndIndex - imgStartIndex + 1) << " ms\n";
-    std::cout << "Average descriptors extract time for " << (imgEndIndex - imgStartIndex + 1) << " images is " << extractTimeSum/(double)(imgEndIndex - imgStartIndex + 1) << " ms\n";
+    std::cout << "Average keypoints detect time for " << (imgEndIndex - imgStartIndex + 1) << " images is " << detectTimeSum / (double)(imgEndIndex - imgStartIndex + 1) << " ms\n";
+    std::cout << "Average descriptors extract time for " << (imgEndIndex - imgStartIndex + 1) << " images is " << extractTimeSum / (double)(imgEndIndex - imgStartIndex + 1) << " ms\n";
 
     return 0;
 }

@@ -34,7 +34,7 @@ std::vector<Car> initHighway(bool renderScene, pcl::visualization::PCLVisualizer
     return cars;
 }
 
-void simpleHighway(pcl::visualization::PCLVisualizer::Ptr& viewer)
+void simpleHighway(pcl::visualization::PCLVisualizer::Ptr &viewer)
 {
     // ----------------------------------------------------
     // -----Open 3D viewer and display simple highway -----
@@ -61,7 +61,7 @@ void simpleHighway(pcl::visualization::PCLVisualizer::Ptr& viewer)
     int clusterId = 0;
     std::vector<Color> colors = {Color(1, 0, 0), Color(0, 1, 0), Color(0, 0, 1)};
     cout << "the number of cloud cluster is " << cloudClusters.size() << endl;
-    
+
     for (pcl::PointCloud<pcl::PointXYZ>::Ptr cluster : cloudClusters)
     {
         // std::cout << "cluster size ";
@@ -73,7 +73,7 @@ void simpleHighway(pcl::visualization::PCLVisualizer::Ptr& viewer)
     }
 }
 
-void cityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer, ProcessPointClouds<pcl::PointXYZI>* pointProcessorI, const pcl::PointCloud<pcl::PointXYZI>::Ptr& inputCloud)
+void cityBlock(pcl::visualization::PCLVisualizer::Ptr &viewer, ProcessPointClouds<pcl::PointXYZI> *pointProcessorI, const pcl::PointCloud<pcl::PointXYZI>::Ptr &inputCloud)
 {
     // ----------------------------------------------------
     // -----Open 3D viewer and display City Block     -----
@@ -93,7 +93,7 @@ void cityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer, ProcessPointCloud
     std::vector<typename pcl::PointCloud<pcl::PointXYZI>::Ptr> cloudClusters = pointProcessor2.Clustering(segmenetCloud.second, 0.7, 5, 100);
     cout << "the number of cloud cluster is " << cloudClusters.size() << endl;
     int clusterId = 0;
-    std::vector<Color> colors = { Color(1,0,0), Color(0,1,0), Color(0,0,1) };
+    std::vector<Color> colors = {Color(1, 0, 0), Color(0, 1, 0), Color(0, 0, 1)};
 
     for (pcl::PointCloud<pcl::PointXYZI>::Ptr cluster : cloudClusters)
     {
