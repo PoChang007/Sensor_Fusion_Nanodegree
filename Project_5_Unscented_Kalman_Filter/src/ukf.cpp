@@ -8,7 +8,8 @@ using Eigen::VectorXd;
 /**
  * Initializes Unscented Kalman filter
  */
-UKF::UKF() {
+UKF::UKF()
+{
   // if this is false, laser measurements will be ignored (except during init)
   use_laser_ = true;
 
@@ -22,17 +23,17 @@ UKF::UKF() {
   P_ = MatrixXd(5, 5);
 
   P_ << 1, 0, 0, 0, 0,
-        0, 1, 0, 0, 0,
-        0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0;
+      0, 1, 0, 0, 0,
+      0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0;
 
   // Process noise standard deviation longitudinal acceleration in m/s^2
   std_a_ = 4;
 
   // Process noise standard deviation yaw acceleration in rad/s^2
   std_yawdd_ = 3;
-  
+
   /**
    * DO NOT MODIFY measurement noise values below.
    * These are provided by the sensor manufacturer.
@@ -52,11 +53,11 @@ UKF::UKF() {
 
   // Radar measurement noise standard deviation radius change in m/s
   std_radrd_ = 0.3;
-  
+
   /**
    * End DO NOT MODIFY section for measurement noise values 
    */
-      
+
   // initially set to false, set to true in first call of ProcessMeasurement
   is_initialized_ = false;
 
@@ -73,22 +74,26 @@ UKF::UKF() {
   Xsig_pred_ = MatrixXd(n_x_, 2 * n_aug_ + 1);
 
   // Weights of sigma points
-  weights_  = VectorXd(2 * n_aug_+1);
-  double weight_0 = lambda_/(lambda_+n_aug_);
-  double weight = 0.5/(lambda_+n_aug_);
-  
+  weights_ = VectorXd(2 * n_aug_ + 1);
+  double weight_0 = lambda_ / (lambda_ + n_aug_);
+  double weight = 0.5 / (lambda_ + n_aug_);
+
   weights_(0) = weight_0;
-  for (int i=1; i < 2*n_aug_+1; ++i) {  
+  for (int i = 1; i < 2 * n_aug_ + 1; ++i)
+  {
     weights_(i) = weight;
   }
 }
 
 UKF::~UKF() {}
 
-void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
+void UKF::ProcessMeasurement(MeasurementPackage meas_package)
+{
 
-  if (!use_laser_ && meas_package.sensor_type_ == MeasurementPackage::LASER) return;
-  else if (!use_radar_ && meas_package.sensor_type_ == MeasurementPackage::RADAR) return;
+  if (!use_laser_ && meas_package.sensor_type_ == MeasurementPackage::LASER)
+    return;
+  else if (!use_radar_ && meas_package.sensor_type_ == MeasurementPackage::RADAR)
+    return;
 
   if (!is_initialized_)
   {
@@ -96,10 +101,10 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
     if (meas_package.sensor_type_ == MeasurementPackage::LASER)
     {
       x_ << meas_package.raw_measurements_[0],
-            meas_package.raw_measurements_[1],
-            0,
-            0,
-            0;
+          meas_package.raw_measurements_[1],
+          0,
+          0,
+          0;
     }
     else
     {
@@ -112,10 +117,10 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
       double vy = rho_dot * sin(phi);
       double v = sqrt(vx * vx + vy * vy);
       x_ << px,
-            py,
-            v,
-            0,
-            0;
+          py,
+          v,
+          0,
+          0;
     }
     time_us_ = meas_package.timestamp_;
     is_initialized_ = true;
@@ -138,10 +143,10 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
   {
     UpdateRadar(meas_package);
   }
-
 }
 
-void UKF::Prediction(double delta_t) {
+void UKF::Prediction(double delta_t)
+{
   /**
    * Estimate the object's location. 
    * Modify the state vector, x_. Predict sigma points, the state, and the state covariance matrix.
@@ -161,17 +166,17 @@ void UKF::Prediction(double delta_t) {
 
   // augmented mean state
   x_aug << x_(0),
-           x_(1),
-           x_(2),
-           x_(3),
-           x_(4),
-           0,
-           0;
+      x_(1),
+      x_(2),
+      x_(3),
+      x_(4),
+      0,
+      0;
 
   // create process noise covariance matrix
   MatrixXd Q = MatrixXd(2, 2);
   Q << std_a_ * std_a_, 0,
-       0, std_yawdd_ * std_yawdd_;
+      0, std_yawdd_ * std_yawdd_;
 
   // create augmented covariance matrix
   P_aug.topLeftCorner(5, 5) = P_;
@@ -247,7 +252,8 @@ void UKF::Prediction(double delta_t) {
   }
 }
 
-void UKF::UpdateLidar(MeasurementPackage meas_package) {
+void UKF::UpdateLidar(MeasurementPackage meas_package)
+{
   /**
    * Use lidar data to update the belief about the object's position. 
    * Modify the state vector, x_, and covariance, P_.
@@ -299,7 +305,7 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   VectorXd z = VectorXd(n_z);
   z.fill(0.0);
   z << meas_package.raw_measurements_[0], // position x
-       meas_package.raw_measurements_[1]; // position y
+      meas_package.raw_measurements_[1];  // position y
 
   // create matrix for cross correlation Tc
   MatrixXd Tc = MatrixXd(n_x_, n_z);
@@ -332,7 +338,8 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   P_ = P_ - KGain * S * KGain.transpose();
 }
 
-void UKF::UpdateRadar(MeasurementPackage meas_package) {
+void UKF::UpdateRadar(MeasurementPackage meas_package)
+{
   /**
    * Use radar data to update the belief about the object's position. 
    * Modify the state vector, x_, and covariance, P_.

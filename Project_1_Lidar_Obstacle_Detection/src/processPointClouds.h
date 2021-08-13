@@ -1,4 +1,4 @@
-// PCL lib Functions for processing point clouds 
+// PCL lib Functions for processing point clouds
 
 #ifndef PROCESSPOINTCLOUDS_H_
 #define PROCESSPOINTCLOUDS_H_
@@ -12,8 +12,8 @@
 #include <pcl/segmentation/sac_segmentation.h>
 #include <pcl/segmentation/extract_clusters.h>
 #include <pcl/common/transforms.h>
-#include <iostream> 
-#include <string>  
+#include <iostream>
+#include <string>
 #include <vector>
 #include <ctime>
 #include <chrono>
@@ -21,10 +21,10 @@
 #include "render/box.h"
 #include "kdtree3d.h"
 
-template<typename PointT>
-class ProcessPointClouds {
+template <typename PointT>
+class ProcessPointClouds
+{
 public:
-
     //constructor
     ProcessPointClouds();
     //deconstructor
@@ -51,7 +51,7 @@ public:
     std::pair<typename pcl::PointCloud<PointT>::Ptr, typename pcl::PointCloud<PointT>::Ptr> SegmentPlane(typename pcl::PointCloud<PointT>::Ptr cloud, int maxIterations, float distanceTol);
 
     void proximity(typename pcl::PointCloud<PointT>::Ptr cloud, std::vector<int> &cluster,
-                   std::vector<bool> &isPointProcessed, int index, KdTree* tree, float distanceTol);
+                   std::vector<bool> &isPointProcessed, int index, KdTree *tree, float distanceTol);
 
     std::vector<typename pcl::PointCloud<PointT>::Ptr> Clustering(typename pcl::PointCloud<PointT>::Ptr cloud, float distanceTol, int minSize, int maxSize);
 };

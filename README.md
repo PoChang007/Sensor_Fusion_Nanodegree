@@ -10,7 +10,9 @@ The summary of my learnings in Udacity's SFND program. The program mainly focuse
 1. Clone this repo: `git clone https://github.com/PoChang007/Sensor_Fusion_Nanodegree.git`
 2. Install Git [LFS](https://git-lfs.github.com/)
 
-Each project can be built individually in its folder. See the instruction in each project folder.
+## Build Instructions
+
+See the build instructions in each project folder.
 
 ## Project 1 - Lidar Obstacle Detection
 

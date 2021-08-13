@@ -15,14 +15,15 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, std::vector<cv::Key
     {
         if (!(descriptorType.compare("DES_BINARY") == 0 || descriptorType.compare("DES_HOG") == 0))
         {
-            std::cout << "no descriptorType is found." << "\n";
+            std::cout << "no descriptorType is found."
+                      << "\n";
         }
         int normType = descriptorType.compare("DES_BINARY") == 0 ? cv::NORM_HAMMING : cv::NORM_L2;
         matcher = cv::BFMatcher::create(normType, crossCheck);
     }
     else if (matcherType.compare("MAT_FLANN") == 0)
     {
-        if (descSource.type() != CV_32F || descRef.type() != CV_32F )
+        if (descSource.type() != CV_32F || descRef.type() != CV_32F)
         { // OpenCV bug workaround : convert binary descriptors to floating point due to a bug in current OpenCV implementation
             descSource.convertTo(descSource, CV_32F);
             descRef.convertTo(descRef, CV_32F);
@@ -31,18 +32,19 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, std::vector<cv::Key
     }
     else
     {
-        std::cout << "no matcher type is found." << "\n";
+        std::cout << "no matcher type is found."
+                  << "\n";
         exit(1);
     }
 
     // perform matching task
     if (selectorType.compare("SEL_NN") == 0)
-    { 
+    {
         // nearest neighbor (best match)
         matcher->match(descSource, descRef, matches); // Finds the best match for each descriptor in desc1
     }
     else if (selectorType.compare("SEL_KNN") == 0)
-    { 
+    {
         // k nearest neighbors (k=2)
         vector<vector<cv::DMatch>> knn_matches;
         matcher->knnMatch(descSource, descRef, knn_matches, 2); // finds the 2 best matches
@@ -58,7 +60,8 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, std::vector<cv::Key
     }
     else
     {
-        std::cout << "no selectorType is found." << "\n";
+        std::cout << "no selectorType is found."
+                  << "\n";
         exit(1);
     }
 }
@@ -98,18 +101,19 @@ double descKeypoints(vector<cv::KeyPoint> &keypoints, cv::Mat &img, cv::Mat &des
     }
     else
     {
-        std::cout << "no descriptorType is found" << "\n";
+        std::cout << "no descriptorType is found"
+                  << "\n";
         exit(1);
     }
 
     // perform feature description
     double t = (double)cv::getTickCount();
     extractor->compute(img, keypoints, descriptors);
-    
+
     t = ((double)cv::getTickCount() - t) / cv::getTickFrequency();
     double extractTime = 1000 * t / 1.0;
     std::cout << descriptorType << " descriptor extraction in " << extractTime << " ms" << std::endl;
-    
+
     return extractTime;
 }
 
@@ -176,7 +180,7 @@ double detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bo
     {
         for (int j = 0; j < dst.cols; j++)
         {
-            int currentMinResponse = (int)dst_norm.at<float>(i,j);
+            int currentMinResponse = (int)dst_norm.at<float>(i, j);
             bool bOverlap = false;
             if (currentMinResponse > minResponse)
             {
@@ -207,7 +211,8 @@ double detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bo
     }
     t = ((double)cv::getTickCount() - t) / cv::getTickFrequency();
     double detectTime = 1000 * t / 1.0;
-    std::cout << "Harris" << " detector size is " << keypoints.size() << "\n";
+    std::cout << "Harris"
+              << " detector size is " << keypoints.size() << "\n";
 
     // visualize results
     if (bVis)
@@ -255,7 +260,8 @@ double detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, st
     }
     else
     {
-        std::cout << "no detector type is found." << "\n";
+        std::cout << "no detector type is found."
+                  << "\n";
         exit(1);
     }
     t = ((double)cv::getTickCount() - t) / cv::getTickFrequency();
