@@ -1,5 +1,7 @@
 # 2D Feature Tracking
 
+# [Project Writeup](project_2_writeup.md#Project-2-WriteUp)
+
 <img src="images/keypoints.png" width="820" height="248" />
 <hr>
 
@@ -8,9 +10,7 @@ The idea of this camera project is to build a collision detection system - that'
 * First, we will focus on loading images, setting up data structures and putting everything into a ring buffer to optimize memory load. 
 * Then, we will integrate several keypoint detectors such as HARRIS, FAST, BRISK and SIFT and compare them with regard to number of keypoints and speed. 
 * In the next part, we will then focus on descriptor extraction and matching using brute force and also the FLANN approach we discussed in the previous lesson. 
-* In the last part, once the code framework is complete, we will test the various algorithms in different combinations and compare them with regard to some performance measures. 
-
-[Project Writeup](project_2_writeup.md#Project-2-WriteUp)
+* In the last part, once the code framework is complete, we will test the various algorithms in different combinations and compare them with regard to some performance measures.
 
 ## Dependencies for Running Locally
 
