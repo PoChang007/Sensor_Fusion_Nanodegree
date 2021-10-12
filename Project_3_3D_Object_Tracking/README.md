@@ -1,5 +1,7 @@
 # 3D Object Tracking
 
+# [Project Writeup](project_3_writeup.md#Project-3-WriteUp)
+
 <img src="images/course_code_structure.png" width="779" height="414" />
 <hr>
 
@@ -8,8 +10,6 @@ In this project, we will implement the missing parts in the schematic based on w
 2. Second, we will compute the TTC based on Lidar measurements. 
 3. we will then proceed to do the same using the camera, which requires to first associate keypoint matches to regions of interest and then to compute the TTC based on those matches. 
 4. And lastly, we will conduct various tests with the framework. Our goal is to identify the most suitable detector/descriptor combination for TTC estimation and also to search for problems that can lead to faulty measurements by the camera or Lidar sensor.
-
-[Project Writeup](project_3_writeup.md#Project-3-WriteUp)
 
 ## Dependencies for Running Locally
 
